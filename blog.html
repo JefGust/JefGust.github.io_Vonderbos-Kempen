@@ -22,11 +22,24 @@
     <main>
         <section>
             <h2>Laatste berichten</h2>
-            <!-- Placeholder voor blogposts en reacties -->
+            <div id="blog-posts"></div>
+        </section>
+        <section id="edit-section" style="display:none;">
+            <h2>Bewerk blog</h2>
+            <form id="edit-form">
+                <input type="hidden" id="post-id" name="post-id">
+                <label for="title">Titel:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Inhoud:</label>
+                <textarea id="content" name="content" required></textarea>
+                <button type="submit">Opslaan</button>
+            </form>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Vonderbos-Kempen</p>
     </footer>
+    <script src="auth.js"></script>
+    <script src="blog.js"></script>
 </body>
 </html>
