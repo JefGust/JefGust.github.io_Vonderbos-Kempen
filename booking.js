@@ -1,6 +1,7 @@
 document.getElementById('booking-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    
     // Verzamel de gegevens uit het formulier
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
