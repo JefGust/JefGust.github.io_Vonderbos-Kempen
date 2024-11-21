@@ -1,2 +1,2 @@
 # Vonderbos-Kempen
-(https://github.com/JefGust/Vonderbos-Kempen.git)
+](https://jefgust.github.io/Vonderbos-Kempen.github.io/)
