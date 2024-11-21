@@ -66,6 +66,32 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Calendar styling */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar div {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.available {
+    background-color: #d4edda; /* Groene kleur voor beschikbaar */
+}
+
+.booked {
+    background-color: #f8d7da; /* Rode kleur voor geboekt */
+}
+
+.reserved {
+    background-color: #fff3cd; /* Gele kleur voor gereserveerd */
+}
+
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
     nav ul {
