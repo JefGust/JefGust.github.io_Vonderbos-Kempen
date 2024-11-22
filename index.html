@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vonderbos-Kempen</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>Welkom bij Vonderbos-Kempen</h1>
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -25,9 +27,21 @@
             <p>Ontdek het rustgevende vakantiehuisje midden in het bos van de Kempen.</p>
             <img src="file:///home/chronos/u-256d155fb3963cf0cf8c58e169ed3c9c2e94e778/MyFiles/938bd924-d31c-46ae-8981-94789cd7130a.webp" alt="Vonderbos-Kempen">
         </section>
+        <section id="blog-posts">
+            <h2>Blog Posts</h2>
+            <!-- Blog posts worden hier dynamisch toegevoegd -->
+        </section>
+        <section id="booking-form-section">
+            <h2>Boek je verblijf</h2>
+            <form id="booking-form">
+                <input type="text" id="name" placeholder="Naam" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="date" id="date" required>
+                <button type="submit">Boek nu</button>
+            </form>
+            <div id="booking-result"></div>
+        </section>
+        <div id="calendar" class="calendar"></div>
     </main>
-    <footer>
-        <p>&copy; 2024 Vonderbos-Kempen</p>
-    </footer>
 </body>
 </html>
