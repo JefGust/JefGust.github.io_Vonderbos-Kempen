@@ -23,9 +23,7 @@
         <section>
             <h2>Beschikbaarheid</h2>
             <p>Hier kunt u de beschikbaarheid van het vakantiehuisje bekijken en reserveren.</p>
-            <div id="calendar" class="calendar">
-                <!-- De agenda wordt hier gegenereerd -->
-            </div>
+            <div id="calendar" class="calendar"></div>
             
             <form id="booking-form">
                 <label for="name">Naam:</label>
@@ -34,17 +32,8 @@
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="date">Datum:</label>
-                <input type="date" id="date" name="date" required>
+                <label for="start-date">Startdatum:</label>
+                <input type="date" id="start-date" name="start-date" required>
 
-                <button type="submit">Boek nu</button>
-            </form>
-            <div id="booking-result"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Vonderbos-Kempen</p>
-    </footer>
-    <script src="booking.js"></script>
-</body>
-</html>
+                <label for="end-date">Einddatum:</label>
+                <input type="date" id="end-date" name="end-date"
