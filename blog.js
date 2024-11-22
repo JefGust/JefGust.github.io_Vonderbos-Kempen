@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const blogPosts = [
         { id: 1, title: "Welkom bij Vonderbos-Kempen", content: "Ontdek ons prachtige vakantiehuisje." },
-        { id: 2, title: "Activiteiten in de omgeving", content: "Er is veel te doen in de omgeving van de Kempen." }
+        { id: 2, title: "Activiteiten in de omgeving", content: "Er is veel te doen in de omgeving van de Kempen." },
+        { id: 3, title: "Geniet van de natuur", content: "Onze ligging in de Kempen biedt veel natuurpracht." },
+        { id: 4, title: "Accommodatie", content: "Bekijk onze comfortabele accommodaties." }
     ];
 
     const blogPostsDiv = document.getElementById('blog-posts');
@@ -25,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const postId = document.getElementById('post-id').value;
         const title = document.getElementById('title').value;
         const content = document.getElementById('content').value;
-        // Hier zou je de post bijwerken in de database
         alert(`Post ${postId} bijgewerkt: ${title}`);
     });
 });
