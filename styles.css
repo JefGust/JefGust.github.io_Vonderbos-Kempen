@@ -1,28 +1,38 @@
-/* Body styling */
 body {
-    font-family: 'Lora', serif; /* Elegant serif font */
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Lichte achtergrondkleur */
-    color: #333; /* Neutrale tekstkleur */
-    overflow-y: scroll; /* Zorg ervoor dat de body scrollbaar is */
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-y: scroll;
 }
 
-/* Header styling */
 header {
-    background-color: #f8b4b4; /* Zachte pastel kleur voor de header */
+    background-color: #f8b4b4;
     color: white;
     padding: 20px 0;
     text-align: center;
-    font-family: 'Montserrat', sans-serif; /* Stijlvolle sans-serif voor koppen */
+    font-family: 'Montserrat', sans-serif;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Zorg ervoor dat de header altijd bovenaan blijft */
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
 
-/* Navigation styling */
+.hamburger-menu {
+    cursor: pointer;
+    display: block;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.menu-open nav {
+    display: block;
+    background-color: #333;
+    padding: 10px;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -46,12 +56,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #e57373; /* Hover effect met subtiel verschil */
+    background-color: #e57373;
 }
 
-/* Main content styling */
 main {
-    margin-top: 80px; /* Ruimte voor de vaste header */
+    margin-top: 80px;
     padding: 20px;
     max-width: 900px;
     margin: 20px auto;
@@ -60,7 +69,6 @@ main {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Calendar styling */
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -75,18 +83,17 @@ main {
 }
 
 .available {
-    background-color: #d4edda; /* Groene kleur voor beschikbaar */
+    background-color: #d4edda;
 }
 
 .booked {
-    background-color: #f8d7da; /* Rode kleur voor geboekt */
+    background-color: #f8d7da;
 }
 
 .reserved {
-    background-color: #fff3cd; /* Gele kleur voor gereserveerd */
+    background-color: #fff3cd;
 }
 
-/* Booking form styling */
 form {
     display: grid;
     gap: 10px;
@@ -116,28 +123,14 @@ form button:hover {
     background-color: #e57373;
 }
 
-/* Booking result styling */
 #booking-result {
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
-    background-color: #d1e7dd; /* Lichte groene kleur voor succesboodschappen */
-    color: #0f5132; /* Donkergroene tekstkleur */
+    background-color: #d1e7dd;
+    color: #0f5132;
 }
 
-/* Footer styling */
-footer {
-    background-color: #f8b4b4;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive design for mobile devices */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -146,6 +139,6 @@ footer {
     main {
         margin: 10px;
         padding: 10px;
-        margin-top: 100px; /* Extra ruimte voor de vaste header op kleinere schermen */
+        margin-top: 100px;
     }
 }
