@@ -34,6 +34,4 @@ document.addEventListener('DOMContentLoaded', function() {
 function editPost(id) {
     const post = blogPosts.find(post => post.id === id);
     document.getElementById('post-id').value = post.id;
-    document.getElementById('title').value = post.title;
-    document.getElementById('content').value = post.content;
-}
+    document.getElementById('title').value
