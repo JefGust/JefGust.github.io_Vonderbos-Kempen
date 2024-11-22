@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        <h1>Welkom bij Vonderbos-Kempen</h1>
         <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
         <nav>
             <ul>
@@ -43,7 +42,11 @@
             </form>
             <div id="booking-result"></div>
         </section>
-        <div id="calendar" class="calendar"></div>
+        <div id="calendar-container">
+            <button id="prev-month">Vorige maand</button>
+            <div id="calendar" class="calendar"></div>
+            <button id="next-month">Volgende maand</button>
+        </div>
     </main>
     <script>
         function toggleMenu() {
@@ -119,24 +122,33 @@
             '2024-11-21': 'reserved'
         };
 
-        function generateCalendar() {
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        function generateCalendar(month, year) {
             const calendar = document.getElementById('calendar');
-            const today = new Date();
-            const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+            calendar.innerHTML = '';
+            const firstDay = new Date(year, month).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement('div');
+                calendar.appendChild(emptyDiv);
+            }
 
             for (let day = 1; day <= daysInMonth; day++) {
-                const date = new Date(today.getFullYear(), today.getMonth(), day).toISOString().split('T')[0];
+                const date = new Date(year, month, day).toISOString().split('T')[0];
                 const div = document.createElement('div');
                 div.id = date;
                 div.textContent = day;
-                div.className = 'available';
+                div.className = bookings[date] || 'available';
                 calendar.appendChild(div);
             }
-
-            updateCalendar();
         }
 
         function updateCalendar() {
+            generateCalendar(currentMonth, currentYear);
+
             for (const date in bookings) {
                 const div = document.getElementById(date);
                 if (div) {
@@ -144,6 +156,24 @@
                 }
             }
         }
+
+        document.getElementById('prev-month').addEventListener('click', function() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            updateCalendar();
+        });
+
+        document.getElementById('next-month').addEventListener('click', function() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            updateCalendar();
+        });
 
         function login(username, password) {
             const users = {
@@ -171,7 +201,7 @@
             return user && user.role === "admin";
         }
 
-        generateCalendar();
+        updateCalendar();
     </script>
 </body>
 </html>
